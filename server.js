@@ -24,6 +24,8 @@ cloudinary.config({
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(Express.static(path.join(__dirname, 'public')))
 
 app.set('view engine', 'ejs');
@@ -71,7 +73,6 @@ app.post('/upload', models.user.logined, function (req, res) {
                 fstream.on('close', function () {
                     cloudinary.v2.uploader.upload(__dirname + '/public/' + filename,
                         function (error, result) {
-                           
                                 fs.unlink(__dirname + '/public/' + filename)
                             console.log(result)
                             if (error)

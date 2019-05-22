@@ -110,7 +110,7 @@
                 <p>Tài khoản KM1: <b>0</b></p>
                 <p>Tài khoản KM2: <b>0</b></p>
               </div>
-              <a href=""><button>Đăng tin</button></a>
+              <a href="/dangtin"><button>Đăng tin</button></a>
             </div>
             <div class="info">
               <div class="info__item">
@@ -133,8 +133,7 @@
                     <li><span id="thue" style="cursor: pointer;">Quản lý tin cho thuê</span></li>
                     <li><span id="canban-thue" style="cursor: pointer;">Quản lý tin rao bán</sapn>
                     </li>
-                    <li><a href="/dangtin" style="cursor: pointer;">Đăng tin</a></li>
-
+               
                   </ul>
                 </div>
               </div>
@@ -144,10 +143,9 @@
                 <div class="info__item__title">Hướng dẫn & báo giá</div>
                 <div class="info__item__list">
                   <ul>
-                    <li style="cursor: pointer;"><a href="">Hướng dẫn sử dụng</a></li>
-                    <li style="cursor: pointer;"><a href="">Hướng dẫn thanh toán</a></li>
-                    <li style="cursor: pointer;"><a href="">Báo giá</a></li>
-
+                    <li style="cursor: pointer;"><a href="/chitietbaiviet?id=13">Hướng dẫn sử dụng</a></li>
+                    <li style="cursor: pointer;"><a href="/chitietbaiviet?id=12">Hướng dẫn thanh toán</a></li>
+                   
                   </ul>
                 </div>
               </div>
@@ -228,7 +226,7 @@
       $('#profile__right').hide()
 
       let tokenID = $.cookie('tokenId');
-      tokenID && tokenID.length > 0 ? ($('#dangki').text("Xin chào"),$('#dangnhap').html('')) : window.location.replace('/')
+      tokenID && tokenID.length > 0 ? ($('#dangki').text("Xin chào"),$('#dangnhap').html(''),profile()) : window.location.replace('/')
       $('#dangnhap').click(() => {
         $.removeCookie('tokenId', { path: "/" });
         window.location.reload()
@@ -237,7 +235,10 @@
 
 
       $('#change_profile').click(() => {
-        $('#sanpham').hide()
+       profile()
+      })
+      function profile(){
+         $('#sanpham').hide()
         $('#profile__right').show()
         $('#profile__right').html("<img src='/img/loading.gif'style='width: 260px;margin-left:200px;' >")
         axios.post('/api/user/getinfor', {}, {
@@ -262,9 +263,7 @@
           $('#profile__right').html(html)
           $('#img_profile').html("<div style='text-align:center'><i class='fa fa-user-circle col-xs-12 col-md-12' aria-hidden='true' style='font-size:150px'></i><p style='font-size:50px'>" + data.tendangnhap + "</p></div>")
         })
-
-
-      })
+      }
 
       $('#change_password').click(() => {
         let html = '<div class="profile__right__title">thay mật khẩu</div>'

@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-        
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -25,7 +26,7 @@
     <div class="container">
         <header>
             <div class="header__top">
-                <div class="logo"><img src="img/logo.jpg" alt=""></div>
+                <div class="logo"><a href="/"><img src="img/logo.jpg" alt=""></a></div>
                 <div class="topleftmobile">
                     <i class="fa fa-bars" aria-hidden="true">
                         <div class="nav__hover">
@@ -95,68 +96,70 @@
 
             <div class="row">
                 <div class="col-md-3 admin__left" style="background: #264383;">
-                        <div style="text-align: center"><i class="fa fa-user-circle" aria-hidden="true" style="color: white; font-size:110pt;"></i>
-                          </div>
-            <ul style=" color:royalblue; cursor: pointer;">
-                <li id="user"> <i class="fa fa-user-circle" aria-hidden="true"></i> User </li>
-                <li id="sanpham"> <i class="fa fa-pie-chart" aria-hidden="true"></i> Sản phẩm</li>
-                <li id="tintuc"> <i class="fa fa-info" aria-hidden="true"></i> Tin tức</li>
-                <li id="addtintuc"><i class="fa fa-plus-square" aria-hidden="true"></i>Thêm tin</li>
-                <li id="duan"><i class="fa fa-qrcode" aria-hidden="true"></i> Dự án</li>
-
-            </ul>
-            </div>
-            <div class="col-md-9 admin__right">
-
-            <div id="list">
-                <div class="tittle">
-                    <p id="tit">Danh sách user</p>
+                    <div style="text-align: center"><i class="fa fa-user-circle" aria-hidden="true"
+                            style="color: white; font-size:110pt;"></i>
+                    </div>
+                    <ul style=" color:royalblue; cursor: pointer;">
+                        <li id="user" style="margin-top:40px"> <i class="fa fa-user-circle" aria-hidden="true"></i> User
+                        </li>
+                        <li id="sanpham"> <i class="fa fa-pie-chart" aria-hidden="true"></i> Sản phẩm</li>
+                        <li id="tintuc"> <i class="fa fa-info" aria-hidden="true"></i> Tin tức</li>
+                        <li id="addtintuc"><i class="fa fa-plus-square" aria-hidden="true"></i>Thêm tin</li>
+                        <li id="duan"><i class="fa fa-qrcode" aria-hidden="true"></i> Dự án</li>
+                        <li id="addduan"><i class="fa fa-plus-square" aria-hidden="true"></i> Thêm dự án</li>
+                    </ul>
                 </div>
-                <div class="list" id="list1">
-                    <table class="table table-striped table-inverse ">
-                        <thead class="thead-inverse">
-                            <tr id="table">
-                                <th>id</th>
-                                <th>Email</th>
-                                <th> Số Điện Thoại</th>
-                                <th>Địa chỉ</th>
-                                <th>isActive</th>
-                                <th>Thao Tác</th>
-                            </tr>
-                        </thead>
-                        <tbody id="showuser">
+                <div class="col-md-9 admin__right">
 
-                        </tbody>
-                    </table>
-                    <div id="add"></div>
-                </div>
-            </div>
-           
-            <div id="formadd">
-                <form>
-                    <div class="row" style="margin-top: 30px;">
-                        <label class="col-sm-3 control-label lable">Title:</label>
-                        <div class="col-sm-9">
-                            <div class="number required" aria-required="true">
-                                <input id="ten" class="form-control" placeholder=""></div>
+                    <div id="list">
+                        <div class="tittle">
+                            <p id="tit">Danh sách user</p>
+                        </div>
+                        <div class="list" id="list1">
+                            <table class="table table-striped table-inverse ">
+                                <thead class="thead-inverse">
+                                    <tr id="table">
+                                        <th>id</th>
+                                        <th>Email</th>
+                                        <th> Số Điện Thoại</th>
+                                        <th>Địa chỉ</th>
+                                        <th>isActive</th>
+                                        <th>Thao Tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="showuser">
+
+                                </tbody>
+                            </table>
+                            <div id="add"></div>
                         </div>
                     </div>
-                    <div class="row" id="loaitinshow">
-                        <label class="col-sm-3 control-label lable">Loại tin:</label>
-                        <div class="col-sm-9">
-                            <select name="" id="id_loaitin">
-                                <option value="1">All</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-sm-3 control-label lable">Nội dung</label>
-                        <div class="col-sm-9">
-                            <div id="editor"></div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 100px">
-                        chỗ up ảnh(* nhỏ hơn 5MB)<label class="file-upload-container" for="file-upload" style="    width: 150px;
+
+                    <div id="formadd">
+                        <form>
+                            <div class="row" style="margin-top: 30px;">
+                                <label class="col-sm-3 control-label lable">Title:</label>
+                                <div class="col-sm-9">
+                                    <div class="number required" aria-required="true">
+                                        <input id="ten" class="form-control" placeholder=""></div>
+                                </div>
+                            </div>
+                            <div class="row" id="loaitinshow">
+                                <label class="col-sm-3 control-label lable">Loại tin:</label>
+                                <div class="col-sm-9">
+                                    <select name="" id="id_loaitin">
+                                        <option value="1">All</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-3 control-label lable">Nội dung</label>
+                                <div class="col-sm-9">
+                                    <div id="editor"></div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 100px">
+                                chỗ up ảnh(* nhỏ hơn 5MB)<label class="file-upload-container" for="file-upload" style="    width: 150px;
                 height: 50px;
                 background: green;
                 text-align: center;
@@ -166,54 +169,60 @@
                 margin-left: 20px;
                 font-size: 20pt;
               ">
-                            <input id="file-upload" type="file" style="display:none;" onchange="a()">
-                            upload
-                        </label>
-                        <div id="title_image"></div>
+                                    <input id="file-upload" type="file" style="display:none;" onchange="a()">
+                                    upload
+                                </label>
+                                <div id="title_image"></div>
 
-                        <div id="loading"></div>
-                        <div style="display: flex">
+                                <div id="loading"></div>
+                                <div style="display: flex">
 
-                            <div id="create" class="create__admin">
-                                <div id="loadingstatus">
+                                    <div id="create" class="create__admin">
+                                        <div id="loadingstatus">
 
+                                        </div>
+                                        <span>Đăng</span>
+                                    </div>
                                 </div>
-                                <span>Đăng</span>
-                            </div>
-                        </div>
 
 
-                </form>
-                <div id="message"></div>
+                        </form>
+                        <div id="message"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
             <script src="trangchu.js"></script>
             <style>
+                .create__admin {
+                    background: #264383;
+                    color: white;
+                    width: 150px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-left: 42%;
+                    cursor: pointer;
+                }
 
-            .create__admin{
-                background: #264383;
-                color: white;
-                width: 150px;
-                height: 40px;
-                line-height: 40px;
-                text-align: center;
-                margin-top: 30px;
-                margin-left: 42%;
-                cursor: pointer;
-            }
-            .row{
-                margin-bottom: 20px;
-            }
-            #message {
-    text-align: center;
-    font-size: 25pt;
-}
-.admin__left ul li{
-    color: white;
-    border-bottom: 1px solid;
-    line-height: 50px;
-}
+                .row {
+                    margin-bottom: 20px;
+                }
+
+                #message {
+                    text-align: center;
+                    font-size: 25pt;
+                }
+
+                .admin__left ul li {
+                    color: white;
+                    border-bottom: 1px solid;
+                    line-height: 50px;
+                }
+
+                .plus:hover {
+                    cursor: pointer;
+                }
             </style>
         </div>
         <!-- footer -->
@@ -352,17 +361,23 @@
                     res.data.data.map(x => {
                         id = x.id
                         html += '<tr>'
-
-                        html += '<td scope="row"><a href='+'"/chitiet?id='+x.id+'">' + x.id + '</a></td>'
-                        html += '<td>' + x.tensp + '</td>'
-                        html += '<td>' + x.gia + '</td>'
-                        html += '<td>' + x.dientich + '</td>'
-                        html += '<td style="display:flex;"><div onclick="kiemtra(' + x.id + ')"><i class="fa fa-check-circle" aria-hidden="true"></i></div>/ <div onclick="xoa(' + x.id + ')"><i class="fa fa-remove"aria-hidden="true"></i><div></td>'
+                        html += '<td scope="row"><a href=' + '"/chitiet?id=' + x.id + '">' + x.id + '</a></td>'
+                        html += '<th>' + x.tensp + '</th>'
+                        html += '<th>' + x.gia + '</th>'
+                        html += '<th>' + x.dientich + '</th>'
+                        html += '<td><div style="display:flex"><div onclick="kiemtra(' + x.id + ')"><i class="fa fa-check-circle" aria-hidden="true"></i></div>/ <div onclick="xoa(' + x.id + ')"><i class="fa fa-remove"aria-hidden="true"></i><div></div></td>'
                     })
                     $('#showuser').html(html)
                     if (res.data.data.length == 10)
-                        $('#add').html("<span style='color:blue;    font-size: 15pt;' onclick='sanphamshow(" + id + ")'>Tiếp...</span>")
-
+                        $('#add').html("<span class='plus' onclick=sanphamshow(" + res.data.data[0].id + ",false" + ")>Trước</span>/<span class='plus' onclick='sanphamshow(" + id + ",true" + ")'>Tiếp</span>")
+                    else {
+                        if (option) {
+                            $('#add').html("<span class='plus' onclick=sanphamshow(" + res.data.data[0].id + ",false" + ")>Trước</span>")
+                        }
+                        else {
+                            $('#add').html("<span class='plus' onclick=sanphamshow(" + id + ",true" + ")>Tiếp</span>")
+                        }
+                    }
                 }
                 else {
                     $('#showuser').html('<span>no data</span>')
